@@ -5,3 +5,4 @@
 * AngularJSのスクリプトの追加はyeomanで行うことができる。
     例として、`$ yo angular:service myService`でサービスのjsファイルとテストのjsファイルが作成される。
     cf. [http://qiita.com/tetsuya/items/a488b66a88369307a213]
+* テスト用のファイルには別途モジュール依存性を記述しなければならない。
