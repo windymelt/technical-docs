@@ -10,7 +10,7 @@
 コントローラが依存するサービス等をモックするには、テストコード中の`beforeEach`等の部分で`inject`を呼び出し、モックサービスと置換する。Angularは同じ名前を持つ要素をFILO方式(最後に宣言したものが使われる？)で上書きする。すなわち、何かサービスを宣言した後で同じ名前のサービスをロードすると、最後に宣言したものが最初のものと取り代わって_注入_される。
 
 以下のように記述したとする。
-```
+```javascript
 var someFunc;
 
 beforeEach(function(){
@@ -25,7 +25,7 @@ beforeEach(function(){
 
 `$injector`はモジュールのインスタンス化を行う。`inject`はインスタンス化されたサービス等をテスト対象に注入する。
 
-```
+```javascript
 inject(function (_someFunc_) {
   someFunc = _someFunc_
 });
@@ -36,7 +36,7 @@ injection部分は、上記のように記述することもできる。アン�
 ## モックの記述
 モックモジュールの記述も通常のモジュール通り行うが、新たにモジュールを作るので宣言方法がやや変化する。依存性の記述が増えているのが分かるだろうか？
 
-```
+```javascript
 angular.module('hogehogeMock').service(...)     // NG: There's no module 'hogehogeMock'
 angular.module('hogehogeMock', []).service(...) // OK: Creating new module
 ```
