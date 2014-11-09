@@ -6,6 +6,7 @@
     例として、`$ yo angular:service myService`でサービスのjsファイルとテストのjsファイルが作成される。
     cf. [http://qiita.com/tetsuya/items/a488b66a88369307a213]
 * Yeomanを使っているときは、`ng-include`ディレクティブには`app`ディレクトリからのパスを指定する。また、ソースは「二重引用符の中に引用符」で記述する。e.g.`<div ng-include="'views/hogehoge.html'"></div>`
+* `ng-class`などから関数を呼ぶ際は`$scope`に関数を代入しておかなければならない。e.g. `$scope.hogeFunction = function () {...};`
 
 ## Test
 * テスト用のファイルには別途モジュール依存性を記述しなければならない。
